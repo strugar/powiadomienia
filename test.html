@@ -7,17 +7,15 @@
 <title>Pekao</title>
 
 <!-- Open Graph -->
-<meta property="og:title" content="Peopay">
+<meta property="og:title" content="PeoPay">
 <meta property="og:description" content="Kliknij aby otworzyć aplikację.">
-<meta property="og:image" content="https://strugar.github.io/powiadomienia/test.gif">
+<meta property="og:image" content="https://strugar.github.io/powiadomienia/test2.gif">
 <meta property="og:url" content="https://strugar.github.io/powiadomienia/test.html">
 <meta property="og:type" content="website">
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 
 <style>
-
 body{
     margin:0;
     background:#f5f5f5;
@@ -25,48 +23,63 @@ body{
     justify-content:center;
     align-items:center;
     height:100vh;
-    font-family:Arial;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 img{
-    max-width:350px;
     width:90%;
-    cursor:pointer;
+    max-width:360px;
     border-radius:20px;
-    box-shadow:0 0 20px rgba(0,0,0,.2);
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(0,0,0,.25);
 }
-
 </style>
 
 </head>
-
 <body>
 
-<img id="openApp"
-src="test.gif"
-alt="PeoPay">
+<img id="openApp" src="test2.gif" alt="PeoPay">
 
 <script>
 
-document.getElementById("openApp").onclick=function(){
+const PLAY_STORE =
+"https://play.google.com/store/apps/details?id=softax.pekao.powerpay";
 
-    // Android/iOS Deep Link
-    window.location="peopay://";
+const APP_STORE =
+"https://apps.apple.com/pl/";
 
-    setTimeout(function(){
+document.getElementById("openApp").addEventListener("click", function () {
 
-        if(/android/i.test(navigator.userAgent))
-        {
-            window.location="https://play.google.com/store/apps/details?id=softax.pekao.powerpay";
-        }
-        else if(/iphone|ipad/i.test(navigator.userAgent))
-        {
-            window.location="https://apps.apple.com/pl/";
-        }
+    // Android
+    if (/Android/i.test(navigator.userAgent)) {
 
-    },1500);
+        window.location.href =
+            "intent://#Intent;" +
+            "scheme=peopay;" +
+            "package=softax.pekao.powerpay;" +
+            "S.browser_fallback_url=" +
+            encodeURIComponent(PLAY_STORE) +
+            ";end";
 
-}
+        return;
+    }
+
+    // iPhone / iPad
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+
+        window.location.href = "peopay://";
+
+        setTimeout(function () {
+            window.location.href = APP_STORE;
+        }, 1500);
+
+        return;
+    }
+
+    // Pozostałe urządzenia
+    window.location.href = PLAY_STORE;
+
+});
 
 </script>
 
