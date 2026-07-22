@@ -26,6 +26,13 @@ body{
     font-family:Arial,Helvetica,sans-serif;
 }
 
+.container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
 img{
     width:90%;
     max-width:360px;
@@ -33,12 +40,27 @@ img{
     cursor:pointer;
     box-shadow:0 0 20px rgba(0,0,0,.25);
 }
+
+.btn{
+    display:block;
+    width:260px;
+    padding:12px;
+    text-align:center;
+    text-decoration:none;
+    background:#0057b8;
+    color:#fff;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#003f85;
+}
+
 </style>
 
 </head>
 <body>
-
-<img id="openApp" src="test.gif" alt="PeoPay">
 
 <script>
 
@@ -83,11 +105,19 @@ document.getElementById("openApp").addEventListener("click", function () {
 
 </script>
 
-<!-- Metoda 1: Universal Link -->
-    <a href="https://www.pekao.com.pl" class="btn">Metoda 1: Universal Link</a>
+<div class="container">
 
-    <!-- Metoda 2: Bezpośrednia intencja systemowa (Sugerowana dla Androida) -->
-    <a href="intent://#Intent;scheme=https;package=softax.pekao.powerpay;end" class="btn">Metoda 2: Android Intent</a>
+    <img id="openApp" src="test.gif" alt="PeoPay">
+
+    <a href="https://www.pekao.com.pl" class="btn">
+        Metoda 1: Universal Link
+    </a>
+
+    <a href="intent://#Intent;scheme=https;package=softax.pekao.powerpay;end" class="btn">
+        Metoda 2: Android Intent
+    </a>
+
+</div>
 	
 </body>
 </html>
