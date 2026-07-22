@@ -1,1 +1,74 @@
-TEST
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pekao</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Peopay">
+<meta property="og:description" content="Kliknij aby otworzyć aplikację.">
+<meta property="og:image" content="https://giphy.com/gifs/food-market-samples-ET5T8Ua0Ix6Qo">
+<meta property="og:url" content="https://strugar.github.io/powiadomienia">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+
+body{
+    margin:0;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial;
+}
+
+img{
+    max-width:350px;
+    width:90%;
+    cursor:pointer;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img id="openApp"
+src="https://giphy.com/gifs/food-market-samples-ET5T8Ua0Ix6Qo"
+alt="PeoPay">
+
+<script>
+
+document.getElementById("openApp").onclick=function(){
+
+    // Android/iOS Deep Link
+    window.location="peopay://";
+
+    setTimeout(function(){
+
+        if(/android/i.test(navigator.userAgent))
+        {
+            window.location="https://play.google.com/store/apps/details?id=softax.pekao.powerpay";
+        }
+        else if(/iphone|ipad/i.test(navigator.userAgent))
+        {
+            window.location="https://apps.apple.com/pl/";
+        }
+
+    },1500);
+
+}
+
+</script>
+
+</body>
+</html>
