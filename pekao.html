@@ -10,7 +10,7 @@
 <meta property="og:title" content="PeoPay">
 <meta property="og:description" content="Kliknij aby otworzyć aplikację.">
 <meta property="og:image" content="https://strugar.github.io/powiadomienia/pekao.png">
-<meta property="og:url" content="https://strugar.github.io/powiadomienia/pekao.htnml">
+<meta property="og:url" content="https://strugar.github.io/powiadomienia/pekao.html">
 <meta property="og:type" content="website">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -56,68 +56,36 @@ img{
 .btn:hover{
     background:#003f85;
 }
-
 </style>
 
 </head>
 <body>
-
-<script>
-
-const PLAY_STORE =
-"https://play.google.com/store/apps/details?id=softax.pekao.powerpay";
-
-const APP_STORE =
-"https://apps.apple.com/pl/";
-
-document.getElementById("openApp").addEventListener("click", function () {
-
-    // Android
-    if (/Android/i.test(navigator.userAgent)) {
-
-        window.location.href =
-            "intent://#Intent;" +
-            "scheme=peopay;" +
-            "package=softax.pekao.powerpay;" +
-            "S.browser_fallback_url=" +
-            encodeURIComponent(PLAY_STORE) +
-            ";end";
-
-        return;
-    }
-
-    // iPhone / iPad
-    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-
-        window.location.href = "peopay://";
-
-        setTimeout(function () {
-            window.location.href = APP_STORE;
-        }, 1500);
-
-        return;
-    }
-
-    // Pozostałe urządzenia
-    window.location.href = PLAY_STORE;
-
-});
-
-</script>
 
 <div class="container">
 
     <img id="openApp" src="pekao.png" alt="PeoPay">
 
     <a href="https://app.pekao.com.pl" class="btn">
-        Metoda 1: Universal Link
-    </a>
-
-    <a href="intent://#Intent;scheme=https;package=softax.pekao.powerpay;end" class="btn">
-        Metoda 2: Android Intent
+        Otwórz aplikację
     </a>
 
 </div>
-	
+
+<script>
+
+const UNIVERSAL_LINK = "https://app.pekao.com.pl";
+
+// Automatyczne otwarcie po wejściu na stronę
+window.addEventListener("load", () => {
+    window.location.href = UNIVERSAL_LINK;
+});
+
+// Otwarcie po kliknięciu obrazka
+document.getElementById("openApp").addEventListener("click", () => {
+    window.location.href = UNIVERSAL_LINK;
+});
+
+</script>
+
 </body>
 </html>
