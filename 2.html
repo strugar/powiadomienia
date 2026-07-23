@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>PP</title>
+
+<meta name="description" content="Pobierz aplikację PP">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:#f4f6f8;
+
+    color:#222;
+
+}
+
+header{
+
+    width:100%;
+    height:72px;
+
+    background:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 28px;
+
+    box-shadow:0 2px 14px rgba(0,0,0,.05);
+
+}
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#202020;
+
+}
+
+.hero{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:60px 20px;
+
+}
+
+.heroBox{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:60px;
+
+}
+
+.left{
+
+    flex:1;
+
+    min-width:320px;
+
+}
+
+.left h1{
+
+    font-size:42px;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+.left p{
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    margin-bottom:36px;
+
+}
+
+.button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:240px;
+
+    height:56px;
+
+    border-radius:14px;
+
+    background:#1b5cff;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.button:hover{
+
+    background:#0d47da;
+
+}
+
+.right{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    min-width:320px;
+
+}
+
+.card{
+
+    width:360px;
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,.08);
+
+}
+
+.card img{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:28px;
+
+    margin-bottom:24px;
+
+}
+
+.card h2{
+
+    margin-bottom:12px;
+
+}
+
+.card p{
+
+    color:#666;
+
+    line-height:1.5;
+
+    margin-bottom:28px;
+
+}
+
+.download{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#1b5cff;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+.download:hover{
+
+    background:#0d47da;
+
+}
+
+footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    color:#888;
+
+    font-size:14px;
+
+}
+
+@media(max-width:800px){
+
+.heroBox{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.left h1{
+
+    font-size:34px;
+
+}
+
+.left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">PP</div>
+
+</header>
+
+<section class="hero">
+
+<div class="heroBox">
+
+<div class="left">
+
+<h1>Pobierz aplikację PP</h1>
+
+<p>
+
+Korzystaj z aplikacji na swoim smartfonie.
+Kliknij poniżej, aby przejść do oficjalnej strony pobierania.
+
+</p>
+
+<a class="button" id="openButton" href="#">
+Pobierz aplikację
+</a>
+
+</div>
+
+<div class="right">
+
+<div class="card">
+
+<img src="app-icon.png" alt="Ikona aplikacji">
+
+<h2>Aplikacja PP</h2>
+
+<p>
+
+Szybki dostęp do usług w wygodnej aplikacji mobilnej.
+
+</p>
+
+<button class="download" id="downloadButton">
+
+Pobierz
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 PP
+
+</footer>
+
+<script>
+
+const APP_URL="https://example.com";
+
+document.getElementById("openButton").onclick=function(e){
+
+e.preventDefault();
+
+window.location.href=APP_URL;
+
+};
+
+document.getElementById("downloadButton").onclick=function(){
+
+window.location.href=APP_URL;
+
+};
+
+// opcjonalne automatyczne przejście po 1 sekundzie
+// setTimeout(()=>{
+//     window.location.href=APP_URL;
+// },1000);
+
+</script>
+
+</body>
+</html>

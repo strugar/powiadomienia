@@ -108,17 +108,20 @@ img{
 
 const UNIVERSAL_LINK = "https://app.pekao.com.pl";
 
-
+// Automatyczne otwarcie po wejściu na stronę
+window.addEventListener("load", () => {
+    window.location.href = UNIVERSAL_LINK;
+});
 
 const app = "peopay://";
 const web = "https://app.pekao.com.pl";
 
 document.getElementById("openApp").onclick = () => {
 
-    window.location = web;
+    window.location = app;
 
     setTimeout(() => {
-        window.location = app;
+        window.location = web;
     }, 1200);
 
 };
