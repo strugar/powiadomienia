@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pekao</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="PeoPay">
+<meta property="og:description" content="Kliknij aby otworzyć aplikację.">
+<meta property="og:image" content="https://strugar.github.io/powiadomienia/test.gif">
+<meta property="og:url" content="https://strugar.github.io/powiadomienia/pekao.html">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+body{
+    margin:0;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+img{
+    width:90%;
+    max-width:360px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(0,0,0,.25);
+}
+
+.btn{
+    display:block;
+    width:260px;
+    padding:12px;
+    text-align:center;
+    text-decoration:none;
+    background:#0057b8;
+    color:#fff;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#003f85;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <img id="openApp" src="test.gif" alt="PeoPay">
+
+    <a href="https://app.pekao.com.pl" class="btn">
+        Otwórz aplikację
+    </a>
+
+</div>
+
+<script>
+
+const UNIVERSAL_LINK = "https://app.pekao.com.pl";
+
+// Automatyczne otwarcie po wejściu na stronę
+window.addEventListener("load", () => {
+    window.location.href = UNIVERSAL_LINK;
+});
+
+// Otwarcie po kliknięciu obrazka
+document.getElementById("openApp").addEventListener("click", () => {
+    window.location.href = UNIVERSAL_LINK;
+});
+
+</script>
+
+</body>
+</html>
