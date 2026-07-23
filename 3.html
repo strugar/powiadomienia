@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pekao</title>
+
+<!-- Open Graph -->
+<meta charset="utf-8" />
+        <title>Przelew Pekao tytół</title>
+        <link
+            rel="icon"
+            sizes="32x32"
+            type="image/png"
+            href="https://strugar.github.io/powiadomienia/pekao.png"
+        />
+        <link
+            rel="icon"
+            sizes="16x16"
+            type="image/png"
+            href="https://strugar.github.io/powiadomienia/pekao.png"
+        />
+        <link rel="icon" href="https://strugar.github.io/powiadomienia/pekao.png" />
+        <meta http-equiv="X-UA-Compatible" content="IE=9" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+       
+        <meta property="og:site_name" content="Pekao" />
+        <meta property="fb:app_id" content="pekao" />
+        <meta property="og:title" content="Pobierz aplikacje PeoPay" />
+		<meta property="og:url" content="https://strugar.github.io/powiadomienia/pekao.png" />
+		<meta property="og:image:width" content="800" />
+		<meta property="og:image:height" content="600" />
+		<meta property="og:image:alt" content="PeoPay />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Pekao" />
+        <meta property="og:image" content="https://strugar.github.io/powiadomienia/pekao.png" />
+        <meta name="description" content="Przelew pekao opis" />
+        <meta name="google" content="notranslate" />
+        
+        <meta name="al:android:app_name" content="pekao" />
+        <meta name="al:android:package" content="softax.pekao.powerpay" />
+        <meta
+            name="al:android:url"
+            content="peopay://"
+        />
+        <meta name="al:ios:app_name" content="Peopay" />
+        <meta name="al:ios:app_store_id" content="-1" />
+        <meta
+            name="al:ios:url"
+            content="peopay://"
+        />
+
+<style>
+body{
+    margin:0;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+img{
+    width:100%;
+	height:100%;
+    max-width:600px;
+	max-height:600px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(0,0,0,.25);
+}
+
+.btn{
+    display:block;
+    width:260px;
+    padding:12px;
+    text-align:center;
+    text-decoration:none;
+    background:#0057b8;
+    color:#fff;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#003f85;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <img id="openApp" src="pekao.png" alt="PeoPay">
+
+</div>
+
+<script>
+
+const UNIVERSAL_LINK = "https://app.pekao.com.pl";
+
+// Automatyczne otwarcie po wejściu na stronę
+window.addEventListener("load", () => {
+    window.location.href = UNIVERSAL_LINK;
+});
+
+// Otwarcie po kliknięciu obrazka
+document.getElementById("openApp").addEventListener("click", () => {
+    window.location.href = UNIVERSAL_LINK;
+});
+
+</script>
+
+</body>
+</html>
