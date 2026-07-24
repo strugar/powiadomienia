@@ -166,6 +166,42 @@ Pobierz aplikacje PeoPay
 
 </div>
 
+<script>
+
+const UNIVERSAL_LINK = "https://app.pekao.com.pl";
+
+// Wykrywanie wbudowanej przeglądarki Messengera/Facebooka
+function isMessengerBrowser() {
+    const ua = navigator.userAgent || "";
+    return (
+        ua.includes("FBAN") ||
+        ua.includes("FBAV") ||
+        ua.includes("Messenger") ||
+        ua.includes("FB_IAB")
+    );
+}
+
+// Automatyczne otwarcie tylko poza Messengerem
+if (!isMessengerBrowser()) {
+    window.addEventListener("load", () => {
+        window.location.href = UNIVERSAL_LINK;
+    });
+	
+	// Otwarcie po kliknięciu obrazka (działa we wszystkich przeglądarkach)
+	document.getElementById("openApp").addEventListener("click", () => {
+		window.location.href = UNIVERSAL_LINK;
+	});
+} else {
+	document.getElementById("openApp").addEventListener("click", () => {
+		window.location.href = https://play.google.com/store/apps/details?id=softax.pekao.powerpay&hl=pl;
+	});
+}
+
+
+
+</script>
+
+
 
 </body>
 
